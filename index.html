@@ -33,175 +33,7 @@
         </button>
       </div>
 
-      <!-- Satellite Illustration -->
-      <div class="satellite-wrapper">
-        <svg
-          width="320"
-          height="228"
-          viewBox="0 0 320 228"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          style="color: var(--primary)"
-        >
-          <g class="animate-float">
-            <rect
-              x="110"
-              y="70"
-              width="60"
-              height="45"
-              rx="4"
-              style="stroke: hsla(180, 100%, 45%, 0.8)"
-            />
-            <rect
-              x="115"
-              y="75"
-              width="50"
-              height="35"
-              rx="2"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <ellipse
-              cx="140"
-              cy="55"
-              rx="20"
-              ry="8"
-              style="stroke: hsla(180, 100%, 45%, 0.8)"
-            />
-            <line
-              x1="140"
-              y1="63"
-              x2="140"
-              y2="70"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-            <circle
-              cx="140"
-              cy="52"
-              r="3"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-            <rect
-              x="30"
-              y="75"
-              width="75"
-              height="35"
-              rx="2"
-              style="stroke: hsla(180, 100%, 45%, 0.8)"
-            />
-            <line
-              x1="50"
-              y1="75"
-              x2="50"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="70"
-              y1="75"
-              x2="70"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="90"
-              y1="75"
-              x2="90"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="30"
-              y1="92"
-              x2="105"
-              y2="92"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <rect
-              x="175"
-              y="75"
-              width="75"
-              height="35"
-              rx="2"
-              style="stroke: hsla(180, 100%, 45%, 0.8)"
-            />
-            <line
-              x1="195"
-              y1="75"
-              x2="195"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="215"
-              y1="75"
-              x2="215"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="235"
-              y1="75"
-              x2="235"
-              y2="110"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <line
-              x1="175"
-              y1="92"
-              x2="250"
-              y2="92"
-              style="stroke: hsla(180, 100%, 45%, 0.4)"
-            />
-            <rect
-              x="105"
-              y="85"
-              width="5"
-              height="15"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-            <rect
-              x="170"
-              y="85"
-              width="5"
-              height="15"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-            <circle
-              cx="125"
-              cy="92"
-              r="5"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-            <circle
-              cx="155"
-              cy="92"
-              r="5"
-              style="stroke: hsla(180, 100%, 45%, 0.6)"
-            />
-          </g>
-          <g class="animate-pulse-glow"></g>
-          <circle
-            cx="20"
-            cy="30"
-            r="1.5"
-            style="fill: hsla(180, 100%, 45%, 0.6)"
-          />
-          <circle
-            cx="260"
-            cy="150"
-            r="1"
-            style="fill: hsla(180, 100%, 45%, 0.4)"
-          />
-          <circle
-            cx="50"
-            cy="160"
-            r="1.5"
-            style="fill: hsla(180, 100%, 45%, 0.5)"
-          />
-        </svg>
-      </div>
-
+    
       <!-- Main Content -->
       <div class="hero-content">
         <h1 class="heading-pixel">
@@ -222,7 +54,17 @@
             <h3 class="heading-pixel">Leporelo pro chovatele morčat</h3>
             <div class="glow-card work-item">
               <div class="work-placeholder">
-                <img src="images/leporelo 1.JPG" alt="leporelo přední strana" />
+               <div class="slider-leporelo">
+  <button class="arrow left" id="prev">‹</button>
+
+  <div class="slides">
+    <img src="images/leporelo 1.JPG" class="slide active">
+    <img src="images/leporelo 2.JPG" class="slide">
+    <img src="images/leporelo 3.JPG" class="slide">
+  </div>
+
+  <button class="arrow right" id="next">›</button>
+</div>
               </div>
               <p
                 class="font-mono"
@@ -244,7 +86,21 @@
             </div>
             <div class="glow-card work-item">
               <div class="work-placeholder">
-                <img src="images/bludiste1.JPG" alt="bludiště morče" />
+               <div class="slider-bludiste">
+  <button class="arrow left" id="prev">‹</button>
+
+  <div class="slides">
+    <img src="images/bludiste1.JPG" class="slide active">
+    <img src="images/bludiste2.JPG" class="slide">
+    <img src="images/bludiste3.JPG" class="slide">
+    <img src="images/bludiste4.JPG" class="slide">
+    <img src="images/bludiste5.jpg" class="slide">
+    <img src="images/bludiste6.JPG" class="slide">
+  </div>
+
+  <button class="arrow right" id="next">›</button>
+</div>
+
               </div>
               <p
                 class="font-mono"
@@ -279,9 +135,7 @@
               Logo pro startup firmu vyvíjející hardware
             </p>
           </div>
-        </div>
-    </section>
-
+        </div> </section>
     <!-- About Section -->
     <section id="o-mne">
       <div class="container">
@@ -666,5 +520,48 @@
         </ul>
       </div>
     </nav>
+
+    
+    <script>
+function initSlider(sliderClass) {
+  const slider = document.querySelector(`.${sliderClass}`);
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.slide');
+  const slidesContainer = slider.querySelector('.slides');
+  const prevBtn = slider.querySelector('.arrow.left');
+  const nextBtn = slider.querySelector('.arrow.right');
+  
+  let index = 0;
+
+  function showSlide(i) {
+    slidesContainer.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    });
+  }
+
+  // Zobraz první slide
+  showSlide(index);
+}
+
+// Inicializace obou sliderů
+initSlider('slider-bludiste');
+initSlider('slider-leporelo');
+</script>
   </body>
 </html>
+
+
+

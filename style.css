@@ -78,6 +78,8 @@ h6 {
     ),
     linear-gradient(90deg, hsla(180, 60%, 25%, 0.3) 1px, transparent 1px);
   background-size: 40px 40px;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 /* Glow Card */
@@ -190,35 +192,6 @@ textarea.input-space {
   resize: none;
 }
 
-/* Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
 /* Layout */
 .container {
   width: 100%;
@@ -328,6 +301,27 @@ section {
 
 .work-placeholder {
   width: 100%;
+  aspect-ratio: unset; /* odstraní 16/9 */
+  min-height: 300px; /* minimální výška, aby to nevypadalo prázdně */
+  max-height: 500px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1rem; /* mezera pod obrázkem pro text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(222, 30%, 18%, 0.3);
+}
+
+.work-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* nebo contain pro SVG */
+  display: block;
+}
+/*
+.work-placeholder {
+  width: 100%;
   aspect-ratio: 16/9;
   background: hsla(222, 30%, 18%, 0.3);
   border-radius: 0.75rem;
@@ -342,7 +336,137 @@ section {
   height: 6rem;
   color: hsla(180, 100%, 45%, 0.6);
 }
+*/
+.slider-bludiste {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 1rem auto; /* automatické centrování a mezera nahoře/dole */
+  overflow: hidden;
+}
+.slider-leporelo {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 1rem auto; /* automatické centrování a mezera nahoře/dole */
+  overflow: hidden;
+}
 
+.slides {
+  position: relative;
+  width: 100%;
+  display: flex; /* řadí obrázky vedle sebe */
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* obrázek nahoře, text pod ním */
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  object-position: bottom;
+  margin-top: 1rem; /* mezera nad obrázkem */
+}
+
+/* šipky */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 1rem;
+}
+
+.arrow.right {
+  right: 1rem;
+}
+
+/* responzivita */
+@media (max-width: 1024px) {
+  .slider-bludiste {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+  .arrow {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-bludiste {
+    max-width: 100%;
+  }
+  .slide img {
+    margin-top: 0.5rem; /* menší mezera na malých obrazovkách */
+  }
+}
+
+/*
+.slider-bludiste {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+.slides {
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.slide.active {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+*/
 .work-samples {
   display: grid;
   gap: 2rem;
@@ -636,11 +760,18 @@ nav {
 .work-placeholder img[src$=".svg"] {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* nebo cover, podle preference */
+  object-fit: cover; /* nebo cover, podle preference */
   background: transparent;
   display: block;
 }
 .work-placeholder {
   height: 300px;
   aspect-ratio: unset;
+}
+
+/* Pro desktop – vyšší výška kontejneru, aby se vešla víc fotky */
+@media (min-width: 1025px) {
+  .work-placeholder {
+    height: 400px; /* vyšší výška na desktopu */
+  }
 }
